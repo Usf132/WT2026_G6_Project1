@@ -2,6 +2,7 @@
 #include <vector>
 #include <string>
 #include <ctime>
+#include <map>
 using namespace std;
 
 // ========================
@@ -76,6 +77,8 @@ private:
     string timestamp;
     string status;
     Message* replyTo;
+    map<string,string> emojis;
+
     
 public:
     Message() {
@@ -92,7 +95,8 @@ public:
         // TODO: Implement parameterized constructor
         sender = sndr;
         content = cntnt;
-        timestamp = "";
+        time_t now = time(0);
+        timestamp = ctime(&now);
         status = "sent";
         replyTo = nullptr;
     }
@@ -142,12 +146,19 @@ public:
         cout << "Sender: " << sender << endl;
         cout << "Message: " << content << endl;
         cout <<  timestamp << endl;
-        cout <<  status << endl;
     }
     
     void addEmoji(string emojiCode) {
-        // TODO: Implement emoji support
-        content+=emojiCode;
+
+        emojis[":)"] = "😊";
+        emojis[":("] = "☹️";
+        emojis[":D"] = "😄";
+        emojis["<3"] = "❤️";
+
+        if(emojis.count(emojiCode))
+            content += emojis[emojiCode];
+        else
+            content += emojiCode;
 
     }
 };
