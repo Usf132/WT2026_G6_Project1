@@ -14,7 +14,7 @@ private:
     string phoneNumber;
     string status;
     string lastSeen;
-    
+
 public:
     User() {
         // TODO: Implement default constructor
@@ -80,55 +80,75 @@ private:
 public:
     Message() {
         // TODO: Implement default constructor
+        sender = "";
+        content="";
+        timestamp = "";
+        status = "sent";
+        replyTo = nullptr;
+
     }
     
     Message(string sndr, string cntnt) {
         // TODO: Implement parameterized constructor
+        sender = sndr;
+        content = cntnt;
+        timestamp = "";
+        status = "sent";
+        replyTo = nullptr;
     }
     
     string getContent() const {
         // TODO: Implement getter
-        return "";
+        return content;
     }
     
     string getSender() const {
         // TODO: Implement getter
-        return "";
+        return sender;
     }
     
     string getTimestamp() const {
         // TODO: Implement getter
-        return "";
+        return timestamp;
     }
     
     string getStatus() const {
         // TODO: Implement getter
-        return "";
+        return status;
     }
     
     Message* getReplyTo() const {
         // TODO: Implement getter
-        return nullptr;
+        return replyTo;
     }
     
     void setStatus(string newStatus) {
-        // TODO: Implement setter
+        status = newStatus;
     }
     
     void setReplyTo(Message* msg) {
         // TODO: Implement setter
+        replyTo = msg;
     }
     
     void updateTimestamp() {
         // TODO: Implement timestamp update
+        time_t now = time(0);
+        timestamp = ctime(&now);
     }
     
     void display() const {
         // TODO: Implement message display
+        cout << "Sender: " << sender << endl;
+        cout << "Message: " << content << endl;
+        cout <<  timestamp << endl;
+        cout <<  status << endl;
     }
     
     void addEmoji(string emojiCode) {
         // TODO: Implement emoji support
+        content+=emojiCode;
+
     }
 };
 
