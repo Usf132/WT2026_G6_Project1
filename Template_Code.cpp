@@ -646,7 +646,7 @@ void madeby()
     cout << "============================\n";
     cout << "User Class       -> Shahira Abdullah\n";
     cout << "Message Class    -> Omar Tharwat\n";
-    cout << "Chat Classes (Base :Private :Group)     -> Youssef Asaad\n";
+    cout << "Chat Classes     -> Youssef Asaad\n";
     cout << "WhatsApp Class   -> Yassin Tariq\n";
     cout << "============================\n";
 }
@@ -661,3 +661,4 @@ int main()
     whatsapp.run();
     return 0;
 }
+
