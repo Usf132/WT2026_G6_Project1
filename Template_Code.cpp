@@ -642,7 +642,7 @@ public:
 void madeby()
 {
     cout << "============================\n";
-    cout << "        MADE BY\n";
+    cout << "        MADE BY Group 6:\n";
     cout << "============================\n";
     cout << "User Class       -> Shahira Abdullah\n";
     cout << "Message Class    -> Omar Tharwat\n";
@@ -661,4 +661,5 @@ int main()
     whatsapp.run();
     return 0;
 }
+
 
